@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import ResetStyles from "./styles/Reset.styled";
 import GlobalStyles from "./styles/Global.styled";
 
