@@ -25,5 +25,6 @@ module.exports = {
 		quotes: ["error", "double"],
 		"no-console": "off",
 		"import/no-extraneous-dependencies": "off",
+		"import/prefer-default-export": "off",
 	},
 };

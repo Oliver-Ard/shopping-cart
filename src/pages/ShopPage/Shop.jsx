@@ -9,6 +9,15 @@ function Shop() {
 		"https://fakestoreapi.com/products"
 	);
 
+	function filterProducts(type) {
+		return products.filter((product) => product.category === type);
+	}
+
+	// console.log(filterProducts("men's clothing"));
+	// console.log(filterProducts("jewelery"));
+	// console.log(filterProducts("electronics"));
+	// console.log(filterProducts("women's clothing"));
+
 	const validCategories = [
 		"men's-clothing",
 		"women's-clothing",
@@ -41,8 +50,6 @@ function Shop() {
 			<Link to="/shop/men's-clothing">Men Clothes</Link>
 			<br />
 			<Link to="/shop/women's-clothing">Women Clothes</Link>
-			<br />
-			<Link to="/">Home</Link>
 		</>
 	);
 }
