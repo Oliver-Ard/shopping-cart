@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
 	--clr-overlay-secondary:#ffcd05d5;
 
 	--box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.4);
-	--box-shadow-2: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
+	--box-shadow-2: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 
 	--shadow-border: 0 0 0 10px var(--clr-dark);
 	--shadow-border-2: 0 0 0 8px var(--clr-dark);
