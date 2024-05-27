@@ -3,5 +3,6 @@
 		"source.fixAll.eslint": "explicit"
 	},
 	"eslint.validate": ["javascript", "javascriptreact"],
-	"liveServer.settings.port": 5501
+	"liveServer.settings.port": 5501,
+	"conventionalCommits.scopes": ["Header"]
 }

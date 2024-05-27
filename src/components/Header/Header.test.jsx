@@ -1,4 +1,4 @@
-/* global describe, it, expect */
+/* global describe, it, expect, beforeEach */
 
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -21,18 +21,18 @@ describe("Header component", () => {
 		);
 	}
 
-	it("renders logo correctly", () => {
+	beforeEach(() => {
 		renderHeader(mockCartItems);
+	});
 
+	it("renders logo correctly", () => {
 		const logoEl = screen.getByAltText("CartNest Logo");
 		expect(logoEl).toBeInTheDocument();
 	});
 
 	it("renders navigation links", () => {
-		renderHeader(mockCartItems);
-
-		const homeLink = screen.getByRole("link", { name: /Home/i });
-		const shopLink = screen.getByRole("link", { name: /Shop/i });
+		const homeLink = screen.getByRole("link", { name: /home/i });
+		const shopLink = screen.getByRole("link", { name: /shop/i });
 		const cartLink = screen.getByLabelText("Cart");
 
 		expect(homeLink).toBeInTheDocument();
@@ -41,17 +41,14 @@ describe("Header component", () => {
 	});
 
 	it("cart button shows the correct number of items in the cart", () => {
-		renderHeader(mockCartItems);
-
-		const cartButton = screen.getByLabelText("Cart");
-		expect(cartButton).toHaveAttribute(
+		const cartLink = screen.getByLabelText(/cart/i);
+		expect(cartLink).toHaveAttribute(
 			"data-cart",
 			mockCartItems.length.toString()
 		);
 	});
 
 	it("navigates to Home when Logo is clicked", async () => {
-		renderHeader(mockCartItems);
 		const user = userEvent.setup();
 
 		const logoEl = screen.getByAltText("CartNest Logo");
@@ -60,28 +57,25 @@ describe("Header component", () => {
 	});
 
 	it("navigates to Home when Home link is clicked", async () => {
-		renderHeader(mockCartItems);
 		const user = userEvent.setup();
 
-		const homeButton = screen.getByRole("link", { name: /Home/i });
-		await user.click(homeButton);
+		const homeLink = screen.getByRole("link", { name: /home/i });
+		await user.click(homeLink);
 		expect(window.location.pathname).toBe("/");
 	});
 
 	it("navigates to Shop when Shop link is clicked", async () => {
-		renderHeader(mockCartItems);
 		const user = userEvent.setup();
 
-		const shopButton = screen.getByRole("link", { name: /Shop/i });
-		await user.click(shopButton);
+		const shopLink = screen.getByRole("link", { name: /shop/i });
+		await user.click(shopLink);
 		expect(window.location.pathname).toBe("/shop");
 	});
 
 	it("navigates to Cart when Cart icon is clicked", async () => {
-		renderHeader(mockCartItems);
 		const user = userEvent.setup();
 
-		const cartButton = screen.getByLabelText("Cart");
+		const cartButton = screen.getByLabelText(/cart/i);
 		await user.click(cartButton);
 		expect(window.location.pathname).toBe("/cart");
 	});
