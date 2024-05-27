@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 
@@ -11,7 +11,7 @@ import {
 	HeaderLogo,
 } from "./Header.styled";
 
-import { Container } from "../../styles/Container.styled";
+import { Container } from "../../styles/shared/Utility.styled";
 
 export default function Header({ data }) {
 	return (

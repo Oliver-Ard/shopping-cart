@@ -4,9 +4,9 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { ThemeProvider } from "styled-components";
-import ResetStyles from "./styles/Reset.styled";
-import GlobalStyles from "./styles/Global.styled";
-import theme from "./styles/Theme.styled";
+import ResetStyles from "./styles/global/Reset.styled";
+import GlobalStyles from "./styles/global/Global.styled";
+import theme from "./styles/global/Theme.styled";
 
 import routes from "./routes";
 

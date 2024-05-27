@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import { useState } from "react";
 import Header from "./components/Header/Header";
+import { Container } from "./styles/shared/Utility.styled";
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
@@ -10,7 +11,9 @@ function App() {
 		<>
 			<Header data={cartItems} />
 			<main>
-				<Outlet />
+				<Container>
+					<Outlet />
+				</Container>
 			</main>
 		</>
 	);
