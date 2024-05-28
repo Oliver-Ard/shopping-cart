@@ -18,7 +18,7 @@ export const StyledCategoriesNavBar = styled.nav`
 			color: var(--clr-dark);
 			font-weight: 500;
 			padding: 0.5em 1em;
-			margin: 1rem 0;
+			margin: 0.5rem 0;
 			border-radius: var(--border-radius);
 
 			box-shadow: var(--box-shadow-2);
