@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorPage component > renders all elements 1`] = `
+<div>
+  <div
+    class="sc-aYaIB eDhQlh"
+  >
+    <h1>
+      Oops! Error: 404
+    </h1>
+    <p>
+      We can't seem to find the page you're looking for.
+    </p>
+    <a
+      href="/"
+    >
+      Home
+    </a>
+  </div>
+</div>
+`;
