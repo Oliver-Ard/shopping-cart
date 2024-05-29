@@ -6,7 +6,6 @@ import { Container } from "./styles/shared/Utility.styled";
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
-	console.log(cartItems);
 
 	return (
 		<>

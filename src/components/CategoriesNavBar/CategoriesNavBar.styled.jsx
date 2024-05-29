@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const StyledCategoriesNavBar = styled.nav`
+	margin: 2rem 0;
+
 	ul {
 		text-align: center;
 
