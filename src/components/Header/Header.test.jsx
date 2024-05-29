@@ -7,8 +7,8 @@ import Header from "./Header";
 
 // Mock data for cart items
 const mockCartItems = [
-	{ id: 1, name: "Item 1" },
-	{ id: 2, name: "Item 2" },
+	{ id: 1, name: "Item 1", quantity: 2 },
+	{ id: 2, name: "Item 2", quantity: 3 },
 ];
 
 describe("Header component", () => {
@@ -42,10 +42,11 @@ describe("Header component", () => {
 
 	it("cart button shows the correct number of items in the cart", () => {
 		const cartLink = screen.getByLabelText(/cart/i);
-		expect(cartLink).toHaveAttribute(
-			"data-cart",
-			mockCartItems.length.toString()
+		const totalItems = mockCartItems.reduce(
+			(acc, item) => acc + item.quantity,
+			0
 		);
+		expect(cartLink).toHaveAttribute("data-cart", totalItems.toString());
 	});
 
 	it("navigates to Home when Logo is clicked", async () => {

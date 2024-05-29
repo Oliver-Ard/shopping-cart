@@ -14,6 +14,10 @@ import {
 import { Container } from "../../styles/shared/Utility.styled";
 
 export default function Header({ data }) {
+	function displayCartItems() {
+		return data.reduce((acc, item) => acc + item.quantity, 0);
+	}
+
 	return (
 		<StyledHeader>
 			<Container>
@@ -30,7 +34,10 @@ export default function Header({ data }) {
 							<TextLink to="/shop">Shop</TextLink>
 						</li>
 						<li>
-							<CartLink to="/cart" data-cart={data.length} aria-label="Cart">
+							<CartLink
+								to="/cart"
+								data-cart={displayCartItems()}
+								aria-label="Cart">
 								<FaShoppingCart />
 							</CartLink>
 						</li>
