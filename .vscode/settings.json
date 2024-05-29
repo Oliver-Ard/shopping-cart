@@ -4,5 +4,5 @@
 	},
 	"eslint.validate": ["javascript", "javascriptreact"],
 	"liveServer.settings.port": 5501,
-	"conventionalCommits.scopes": ["Header"]
+	"conventionalCommits.scopes": ["Header", "Card"]
 }

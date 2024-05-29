@@ -12,16 +12,31 @@ import {
 } from "./Card.styled";
 
 function Card({ data }) {
+	// eslint-disable-next-line no-unused-vars
 	const [cartItems, setCartItems] = useOutletContext();
 
 	function addToCart() {
-		const product = {
-			name: data.title,
-			price: data.price,
-			image: data.image,
-		};
+		setCartItems((prevCart) => {
+			const itemInCart = prevCart.find((cartItem) => cartItem.id === data.id);
 
-		setCartItems([...cartItems, product]);
+			if (itemInCart) {
+				return prevCart.map((cartItem) =>
+					cartItem.id === data.id
+						? { ...cartItem, quantity: cartItem.quantity + 1 }
+						: cartItem
+				);
+			}
+
+			const product = {
+				id: data.id,
+				name: data.title,
+				price: data.price,
+				image: data.image,
+				quantity: 1,
+			};
+
+			return [...prevCart, product];
+		});
 	}
 
 	return (
