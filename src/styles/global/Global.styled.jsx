@@ -19,9 +19,9 @@ const GlobalStyles = createGlobalStyle`
 	--clr-dark: #242020;
 	--clr-light: #fff;
 	--clr-error: #d10c0c;
-	--clr-blue: #2C72B8;
+	--clr-blue: #0EA5E9;
 	
-	--clr-overlay: rgb(0, 0, 0, 0.7);
+	--clr-overlay: rgba(0, 0, 0, 0.7);
 	--clr-overlay-secondary:#ffcd05d5;
 
 	--box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.4);
@@ -33,12 +33,14 @@ const GlobalStyles = createGlobalStyle`
 	--border-radius: 10px;
 	--border-radius-2: 50%;
 	--border-radius-3: 50px;
+	--border-radius-4: 5px;
 }
 
 
 body {
 	font-family: var(--ff-body);
 	color: var(--clr-dark);
+	line-height: 1.2;
 }
 
 h1 {
